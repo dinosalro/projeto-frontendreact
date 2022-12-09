@@ -1,0 +1,67 @@
+{
+    "estrelas": [
+        {
+            "id": 0,
+            "nome": "Euphoria",
+            "valor": 10,
+            "img": "https://cdn.discordapp.com/attachments/1043675157157396640/1043679158535979059/image.png",
+            "linha": "Premium"
+        },
+        {
+            "id": 1,
+            "nome": "Grita Grita",
+            "valor": 11,
+            "img": "https://media.discordapp.net/attachments/1043675157157396640/1043679293059907654/image.png?width=594&height=558",
+            "linha": "Bagaceira"
+        },
+        {
+            "id": 2,
+            "nome": "Vibes",
+            "valor": 12,
+            "img": "https://media.discordapp.net/attachments/1043675157157396640/1043679387075227778/image.png?width=576&height=559",
+            "linha": "Bagaceira"
+        },
+        {
+            "id": 3,
+            "nome": "Romantica",
+            "valor": 13,
+            "img": "https://media.discordapp.net/attachments/1043675157157396640/1043679541182345337/image.png?width=563&height=559",
+            "linha": "Premium"
+        },
+        {
+            "id": 4,
+            "nome": "4K",
+            "valor": 14,
+            "img": "https://media.discordapp.net/attachments/1043675157157396640/1043679970024763442/image.png?width=528&height=558",
+            "linha": "Bagaceira"
+        },
+        {
+            "id": 5,
+            "nome": "Starboy",
+            "valor": 15,
+            "img": "https://media.discordapp.net/attachments/1043675157157396640/1043680088106995782/image.png?width=560&height=559",
+            "linha": "Junina"
+        },
+        {
+            "id": 6,
+            "nome": "Estala",
+            "valor": 16,
+            "img": "https://media.discordapp.net/attachments/1043675157157396640/1043680407696199720/image.png?width=565&height=559",
+            "linha": "Premium"
+        },
+        {
+            "id": 7,
+            "nome": "Fabio",
+            "valor": 17,
+            "img": "https://media.discordapp.net/attachments/1043675157157396640/1043680540760494080/image.png?width=606&height=558",
+            "linha": "Bagaceira"
+        },
+        {
+            "id": 8,
+            "nome": "Noiva",
+            "valor": 18,
+            "img": "https://media.discordapp.net/attachments/1043675157157396640/1050381489872830494/image.png?width=730&height=676",
+            "linha": "Junina"
+        }
+    ]
+}
