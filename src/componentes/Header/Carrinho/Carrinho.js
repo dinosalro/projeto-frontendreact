@@ -10,6 +10,8 @@ const Carrinho = (props) => {
     return item.valor * item.quantidade + acc;
   }, 0);
 
+ 
+
   function compraFinalizada() {
     setCompra(true);
     props.setCarrinho([]);
@@ -21,12 +23,14 @@ const Carrinho = (props) => {
 
     const encontrarItem = novoCarrinho.find((produto) => {
       return produto.id === item.id;
+      
     });
 
     encontrarItem.quantidade++;
     props.setItens(props.itens + 1);
 
     props.setCarrinho(novoCarrinho);
+    
   }
 
   function diminuirQuantidade(item) {
@@ -39,6 +43,7 @@ const Carrinho = (props) => {
     encontrarItem.quantidade--;
     props.setItens(props.itens - 1);
     props.setCarrinho(novoCarrinho);
+    
   }
 
   function removerItem(item) {
@@ -50,6 +55,7 @@ const Carrinho = (props) => {
 
     props.setCarrinho(remover);
     props.setItens(props.itens - item.quantidade);
+    
   }
 
   return (
