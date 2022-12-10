@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Card from '../Cards/Card'
 import Filtros from '../Filtros/Filtros'
 import { MainContainer } from './mainStyled'
@@ -6,7 +6,7 @@ import { MainContainer } from './mainStyled'
 
 const Main = ({ setTexto ,busca, itens, setItens, carrinho, setCarrinho}) => {
     const [linhas, setLinhas] = React.useState([{bool: false, nome: ''}, {bool: false, nome: ''}, {bool: false, nome: ''}])
-    const [precos, setPrecos] = React.useState({min: -Infinity, max: Infinity })
+    const [precos, setPrecos] = React.useState({min: 0, max: 1000 })
     const [ordenar, setOrdenar] = React.useState("");
     
 
