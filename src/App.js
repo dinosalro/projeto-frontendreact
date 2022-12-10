@@ -8,6 +8,7 @@ import GlobalStyled from "./GlobalStyled";
 function App() {
   const carrinhoSalvo = JSON.parse(window.localStorage.getItem("carrinho"))
   const [busca, setBusca] = React.useState("")
+  const [texto, setTexto] = React.useState("")
   const [itens, setItens] = React.useState(0)
   const [carrinho, setCarrinho] = React.useState(carrinhoSalvo)
 
@@ -21,7 +22,9 @@ function App() {
     <AppContainer>
       <GlobalStyled/>
     
-      <Header 
+      <Header
+      texto={texto}
+      setTexto={setTexto} 
       busca={busca} 
       setBusca={setBusca} 
       itens={itens}
@@ -30,6 +33,7 @@ function App() {
       setCarrinho={setCarrinho}/>
       <div className="main">
       <Main
+      setTexto={setTexto} 
       busca={busca} 
       itens={itens} 
       setItens={setItens}

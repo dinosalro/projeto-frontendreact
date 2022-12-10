@@ -4,7 +4,7 @@ import Filtros from '../Filtros/Filtros'
 import { MainContainer } from './mainStyled'
 
 
-const Main = ({busca, itens, setItens, carrinho, setCarrinho}) => {
+const Main = ({ setTexto ,busca, itens, setItens, carrinho, setCarrinho}) => {
     const [linhas, setLinhas] = React.useState([{bool: false, nome: ''}, {bool: false, nome: ''}, {bool: false, nome: ''}])
     const [precos, setPrecos] = React.useState({min: -Infinity, max: Infinity })
     const [ordenar, setOrdenar] = React.useState("");
@@ -13,6 +13,7 @@ const Main = ({busca, itens, setItens, carrinho, setCarrinho}) => {
     return (
     <MainContainer>
       <Filtros
+      setTexto={setTexto}
       linhas={linhas}
       setLinhas={setLinhas}
       precos={precos}

@@ -29,7 +29,7 @@ const Card = (props) => {
   return (
    <CardsContainer>
         {config.estrelas.filter((estrela) =>
-         { return estrela.nome.includes(props.busca)})
+         { return estrela.nome.toUpperCase().includes(props.busca.toUpperCase())})
          .filter((estrela) =>{
         return (estrela.valor >= props.precos.min && estrela.valor <= props.precos.max)
          }).filter((estrela) => { 

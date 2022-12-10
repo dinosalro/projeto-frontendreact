@@ -13,21 +13,19 @@ const Filtros = (props) => {
 
   function addFiltros(){
     props.setPrecos({min: min, max: max})
-    console.log(props.precos) 
     props.setLinhas([{bool: premium, nome: 'Premium'}, {bool: bagaceira, nome: 'Bagaceira'}, {bool: junina, nome: 'Junina'}])
-    console.log(props.linhas);
     }
 
   function removerFiltros(){
-    props.setPrecos({min: -Infinity, max: Infinity })
+    props.setPrecos({min: 0, max: 100 })
     props.setLinhas([{bool: false, nome: 'Premium'}, {bool: false, nome: 'Bagaceira'}, {bool: false, nome: 'Junina'}])
     props.setOrdenar("-")
+    props.setTexto("")
     setMax("")
     setMin("")
     setBagaceira(false)
     setJunina(false)
     setPremium(false)
-    props.ordenar("-")
     }
 
 
@@ -38,8 +36,8 @@ const Filtros = (props) => {
       <div className='checkContainer'>
         <p>LINHA</p>
         <div className='checkbox'><input checked={premium} onChange={(e) => {setPremium(e.target.checked)}}  value='Premium' type='checkbox' id='pre'/> <label className="linha1" htmlFor='pre' >PREMIUM</label></div> 
-        <div className='checkbox'><input checked={junina} onChange={(e) => {setBagaceira(e.target.checked)}}  value="Bagaceira" type='checkbox' id='peb'/> <label className="linha2" htmlFor='peb' >BAGACEIRA</label></div>
-        <div className='checkbox'><input checked={bagaceira} onChange={(e) => {setJunina(e.target.checked)}}  value="Junina" type='checkbox' id='jun'/> <label className="linha3" htmlFor='jun' >JUNINA</label></div>
+        <div className='checkbox'><input checked={bagaceira} onChange={(e) => {setBagaceira(e.target.checked)}}  value="Bagaceira" type='checkbox' id='peb'/> <label className="linha2" htmlFor='peb' >BAGACEIRA</label></div>
+        <div className='checkbox'><input checked={junina} onChange={(e) => {setJunina(e.target.checked)}}  value="Junina" type='checkbox' id='jun'/> <label className="linha3" htmlFor='jun' >JUNINA</label></div>
       </div>
       <div>
         <p>ORDENAR</p>
