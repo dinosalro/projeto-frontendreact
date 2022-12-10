@@ -6,7 +6,7 @@ import { MainContainer } from './mainStyled'
 
 const Main = ({ setTexto ,busca, itens, setItens, carrinho, setCarrinho}) => {
     const [linhas, setLinhas] = React.useState([{bool: false, nome: ''}, {bool: false, nome: ''}, {bool: false, nome: ''}])
-    const [precos, setPrecos] = React.useState({min: 0, max: 100 })
+    const [precos, setPrecos] = React.useState({min: 0, max: 1000 })
     const [ordenar, setOrdenar] = React.useState("");
     
 

@@ -3,7 +3,7 @@ import { FiltroContainer } from './filtrosStyled'
 
 const Filtros = (props) => {
   const [min, setMin] = React.useState(0)
-  const [max, setMax] = React.useState(100)
+  const [max, setMax] = React.useState(1000)
   const [premium, setPremium] = React.useState(false)
   const [bagaceira, setBagaceira] = React.useState(false)
   const [junina, setJunina] = React.useState(false)
