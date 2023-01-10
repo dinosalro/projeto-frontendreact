@@ -10,8 +10,6 @@ const Carrinho = (props) => {
     return item.valor * item.quantidade + acc;
   }, 0);
 
- 
-
   function compraFinalizada() {
     setCompra(true);
     props.setCarrinho([]);
@@ -23,14 +21,12 @@ const Carrinho = (props) => {
 
     const encontrarItem = novoCarrinho.find((produto) => {
       return produto.id === item.id;
-      
     });
 
     encontrarItem.quantidade++;
     props.setItens(props.itens + 1);
 
     props.setCarrinho(novoCarrinho);
-    
   }
 
   function diminuirQuantidade(item) {
@@ -43,7 +39,6 @@ const Carrinho = (props) => {
     encontrarItem.quantidade--;
     props.setItens(props.itens - 1);
     props.setCarrinho(novoCarrinho);
-    
   }
 
   function removerItem(item) {
@@ -55,7 +50,6 @@ const Carrinho = (props) => {
 
     props.setCarrinho(remover);
     props.setItens(props.itens - item.quantidade);
-    
   }
 
   return (
@@ -80,65 +74,67 @@ const Carrinho = (props) => {
       {modal && props.carrinho.length > 0 ? (
         <div className="modal">
           <div className="container">
-            <h3 className="titulo" >Seu Carrinho</h3>
+            <h3 className="titulo">Seu Carrinho</h3>
             <button
               className="close"
               onClick={() => {
                 return setModal(false), setCompra(false);
               }}
-            >X</button>
+            >
+              X
+            </button>
             <div className="carrinho">
               <div className="scroll">
-
-              
-              {props.carrinho.map((item) => {
-                return (
-                  <div className="quandoTemItemNoCarrinho">
-                    <div className="itemFotoETexto">
-                      <div key={item.id}>
-                        <img className="foto" src={item.img} />
+                {props.carrinho.map((item) => {
+                  return (
+                    <div className="quandoTemItemNoCarrinho">
+                      <div className="itemFotoETexto">
+                        <div key={item.id}>
+                          <img className="foto" src={item.img} />
+                        </div>
+                        <div className="itemTexto">
+                          <p>{item.nome}</p>
+                          <h2>R$ {item.valor * item.quantidade}</h2>
+                          <p>
+                            {item.quantidade} unidade(s) de {item.valor} reais{" "}
+                          </p>
+                        </div>
                       </div>
-                      <div className="itemTexto">
-                        <p>{item.nome}</p>
-                        <h2>R$ {item.valor * item.quantidade}</h2>
-                        <p>
-                          {item.quantidade} unidade(s) de {item.valor} reais{" "}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="itemBotoes">
-                      <div className="maismenos">
-                        {item.quantidade > 1 ? (
+                      <div className="itemBotoes">
+                        <div className="maismenos">
+                          {item.quantidade > 1 ? (
+                            <button
+                              className="diminuir"
+                              onClick={() => {
+                                diminuirQuantidade(item);
+                              }}
+                            >{`< `}</button>
+                          ) : (
+                            <button
+                              style={{ color: "red", marginRight: "6px" }}
+                            >{`< `}</button>
+                          )}
+                          {item.quantidade}
                           <button
-                            className="diminuir"
+                            className="aumentar"
                             onClick={() => {
-                              diminuirQuantidade(item);
+                              addQuantidade(item);
                             }}
-                          >{`< `}</button>
-                        ) : (
-                          <button style={{ color: "red", marginRight: "6px" }}>{`< `}</button>
-                        )}
-                        {item.quantidade}
-                        <button
-                        className="aumentar"
-                          onClick={() => {
-                            addQuantidade(item);
-                          }}
-                        >{` >`}</button>
-                      </div>
-                      <div>
-                        <button
-                          onClick={() => {
-                            removerItem(item);
-                          }}
-                        >
-                          Remover
-                        </button>
+                          >{` >`}</button>
+                        </div>
+                        <div>
+                          <button
+                            onClick={() => {
+                              removerItem(item);
+                            }}
+                          >
+                            Remover
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
               </div>
               <div className="valorTotal">
                 <p> Total: R$ {total} </p>
@@ -155,15 +151,16 @@ const Carrinho = (props) => {
             <button
               className="close"
               onClick={() => {
-                 setModal(false)
+                setModal(false);
               }}
-            >X
+            >
+              X
             </button>
-          <div className="compraFinalizada">
-            <h2> Parabéns!</h2>
-            <p> Sua compra foi finalizada</p>
-            <p>✨ Seu pedido chegará em breve ✨</p>
-          </div>
+            <div className="compraFinalizada">
+              <h2> Parabéns!</h2>
+              <p> Sua compra foi finalizada</p>
+              <p>✨ Seu pedido chegará em breve ✨</p>
+            </div>
           </div>
         </div>
       ) : (
@@ -171,15 +168,16 @@ const Carrinho = (props) => {
           <div className="modal">
             <div className="container">
               <div className="semItens">
-
-              <button
-              className="close"
-              onClick={() => {
-                setModal(false);
-              }}
-              >X</button>
-              <p> {`Não tem itens no seu carrinho :(`}</p>
-              <p> ... </p>
+                <button
+                  className="close"
+                  onClick={() => {
+                    setModal(false);
+                  }}
+                >
+                  X
+                </button>
+                <p> {`Não tem itens no seu carrinho :(`}</p>
+                <p> ... </p>
               </div>
             </div>
           </div>
